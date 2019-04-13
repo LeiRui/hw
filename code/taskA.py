@@ -4,6 +4,8 @@ import torch
 import torch.nn as nn
 import torchvision
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 from buildModel import *
 from loadData import *
 from createOptimizer import *
@@ -25,7 +27,7 @@ num_classes = 65
 batch_size = 8
 
 # Number of epochs to train for
-num_epochs = 15
+num_epochs = 2
 
 # Flag for feature extracting. When False, we finetune the whole model, when True we only update the reshaped layer params
 feature_extract = True
@@ -47,6 +49,23 @@ optimizer_ft = createOptimizer(model_ft, feature_extract)
 # Detect if we have a GPU available
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # Train and evaluate
-model_ft, hist = train_model(device, model_ft, dataloaders_dict, criterion, optimizer_ft, num_epochs=num_epochs, is_inception=(model_name=="inception"))
+model_ft, train_loss_history, train_acc_history, val_loss_history, \
+val_acc_history, best_cfm \
+  = train_model(device, model_ft, dataloaders_dict, criterion, optimizer_ft,
+                num_epochs=num_epochs, is_inception=(model_name=="inception"))
 
+import time
+import os
+now = time.strftime("%Y-%m-%d-%H_%M",time.localtime(time.time()))
+dir = "/workspace/ruilei/hw/result/taskA_"+now
+if not os.path.exists(dir):
+  print("creating directory: ", dir)
+  os.makedirs(dir)
+
+torch.save(model_ft, os.path.join(dir,"model.pkl"))
+# torch.save(model_object.state_dict(), '/workspace/ruilei/hw/result/params.pkl')
+name = ['train_loss_history','train_acc_history','val_loss_history','val_acc_history']
+history = pd.DataFrame(columns=name, data=np.array([train_loss_history, train_acc_history, val_loss_history,val_acc_history]).T)
+history.to_csv(os.path.join(dir,"history.csv"))
+np.savetxt(os.path.join(dir,"cfm.txt"), best_cfm)
 

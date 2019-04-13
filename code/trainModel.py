@@ -10,6 +10,9 @@ def train_model(device, model, dataloaders, criterion, optimizer, num_epochs=25,
 
   since = time.time()
 
+  train_loss_history = []
+  train_acc_history = []
+  val_loss_history = []
   val_acc_history = []
 
   best_model_wts = copy.deepcopy(model.state_dict())
@@ -78,23 +81,28 @@ def train_model(device, model, dataloaders, criterion, optimizer, num_epochs=25,
 
       print('{} Loss: {:.4f} Acc: {:.4f}'.format(phase, epoch_loss, epoch_acc))
 
-      # deep copy the model
-      if phase == 'val' and epoch_acc > best_acc:
-        best_acc = epoch_acc
-        best_model_wts = copy.deepcopy(model.state_dict())
+      if phase == 'train':
+        train_loss_history.append(epoch_loss)
+        train_acc_history.append(epoch_acc.item())
       if phase == 'val':
-        val_acc_history.append(epoch_acc)
-        # save or print confusion matrix
-        print("confusion matrix:\n")
-        print(cfm)
+        val_loss_history.append(epoch_loss)
+        val_acc_history.append(epoch_acc.item())
+        # deep copy the model
+        if epoch_acc > best_acc:
+          best_acc = epoch_acc
+          best_model_wts = copy.deepcopy(model.state_dict())
+          best_cfm = copy.deepcopy(cfm)
 
-    print() # train or val phase
+    print() # Each epoch has a training and validation phase
 
   time_elapsed = time.time() - since
   print('Training complete in {:.0f}m {:.0f}s'.format(time_elapsed // 60, time_elapsed % 60))
   print('Best val Acc: {:4f}'.format(best_acc))
+  # np.set_printoptions(threshold=np.inf)
+  # print('Confusion matrix under best val acc:\n', best_cfm)
 
   # load best model weights
   model.load_state_dict(best_model_wts)
-  return model, val_acc_history
+  return model, train_loss_history, train_acc_history, \
+         val_loss_history, val_acc_history, best_cfm
 
