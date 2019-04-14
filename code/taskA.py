@@ -3,6 +3,8 @@ from __future__ import division
 import torch
 import torch.nn as nn
 import torchvision
+import matplotlib
+matplotlib.use('AGG')
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd

@@ -7,7 +7,8 @@ from PIL import Image
 import numpy as np
 import pandas as pd
 
-model_dir = "/workspace/ruilei/hw/result/taskA/model.pkl"
+#model_dir = "/workspace/ruilei/hw/result/taskA/model.pkl"
+model_dir="/workspace/ruilei/hw/result/taskB/model.pkl"
 data_dir = "/workspace/ruilei/hw/data/train/2"
 
 class TestDataset(Dataset):
@@ -28,6 +29,7 @@ class TestDataset(Dataset):
 
 print("Loading model...")
 model=torch.load(model_dir)
+model.eval()
 # Detect if we have a GPU available
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # Send the model to GPU

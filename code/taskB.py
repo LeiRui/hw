@@ -3,6 +3,8 @@ from __future__ import division
 import torch
 import torch.nn as nn
 import torchvision
+import matplotlib
+matplotlib.use('AGG')
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -27,7 +29,7 @@ num_classes = 65
 batch_size = 8
 
 # Number of epochs to train for
-num_epochs = 60
+num_epochs = 1
 
 # Flag for feature extracting. When False, we finetune the whole model, when True we only update the reshaped layer params
 feature_extract = False
