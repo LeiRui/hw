@@ -27,13 +27,13 @@ num_classes = 65
 batch_size = 8
 
 # Number of epochs to train for
-num_epochs = 100
+num_epochs = 60
 
 # Flag for feature extracting. When False, we finetune the whole model, when True we only update the reshaped layer params
 feature_extract = False
 
 # Initialize the model for this run
-model_ft, input_size = initialize_model(model_name, num_classes, feature_extract, use_pretrained=False)
+model_ft, input_size = initialize_model(model_name, num_classes, feature_extract, use_pretrained=True)
 # Print the model we just instantiated
 print(model_ft)
 
