@@ -66,6 +66,33 @@ torch.save(model_ft, os.path.join(dir,"model.pkl"))
 # torch.save(model_object.state_dict(), '/workspace/ruilei/hw/result/params.pkl')
 name = ['train_loss_history','train_acc_history','val_loss_history','val_acc_history']
 history = pd.DataFrame(columns=name, data=np.array([train_loss_history, train_acc_history, val_loss_history,val_acc_history]).T)
-history.to_csv(os.path.join(dir,"history.csv"))
-np.savetxt(os.path.join(dir,"cfm.txt"), best_cfm)
+history.to_csv(os.path.join(dir,"history.csv"),index_label="epoch")
+# np.savetxt(os.path.join(dir,"cfm.txt"), best_cfm)
+
+#lidation Accuracy vs. Number of Training Epochs")
+plt.figure()
+plt.title("Task A: Accuracy vs. Number of Training Epochs")
+plt.xlabel("Training Epochs")
+plt.ylabel("Accuracy")
+plt.plot(range(1,num_epochs+1),train_acc_history,label="train")
+plt.plot(range(1,num_epochs+1),val_acc_history,label="validation")
+plt.ylim((0,1.))
+plt.xticks(np.arange(1, num_epochs+1, 1.0),fontsize=3)
+plt.legend()
+plt.savefig(os.path.join(dir,"acc.png"),transparent=False,bbox_inches='tight',dpi=500)
+
+
+plt.figure()
+plt.title("Task A: Loss vs. Number of Training Epochs")
+plt.xlabel("Training Epochs")
+plt.ylabel("Loss")
+plt.plot(range(1,num_epochs+1),train_loss_history,label="train")
+plt.plot(range(1,num_epochs+1),val_loss_history,label="validation")
+#plt.ylim((0,5.))
+plt.xticks(np.arange(1, num_epochs+1, 1.0),fontsize=3)
+plt.legend()
+plt.savefig(os.path.join(dir,"loss.png"),transparent=False,bbox_inches='tight',dpi=500)
+
+from plot_cfm import *
+plot_cfm(best_cfm, dataloaders_dict['train'].dataset.classes, dir)
 

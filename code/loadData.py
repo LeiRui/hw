@@ -4,7 +4,7 @@
 import torch
 from torchvision import datasets, transforms
 import os
-
+import pandas as pd
 
 def getDataLoader(data_dir, input_size, batch_size):
   data_transforms = {
@@ -30,6 +30,9 @@ def getDataLoader(data_dir, input_size, batch_size):
   dataloaders_dict = {x: torch.utils.data.DataLoader(image_datasets[x], batch_size=batch_size, shuffle=True, num_workers=4) for x in ['train', 'val']}
 
   # print(image_datasets['train'].class_to_idx)
+  if not os.path.exists("idx_to_class.txt"):
+    idx_to_class = pd.DataFrame(columns=['class'], data=image_datasets['train'].classes)
+    idx_to_class.to_csv("idx_to_class.txt")
 
   return dataloaders_dict
 
