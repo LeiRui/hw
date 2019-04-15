@@ -1,0 +1,1174 @@
+nohup: ignoring input
+PyTorch Version:  1.0.1.post2
+Torchvision Version:  0.2.2
+Net(
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+  (relu): ReLU(inplace)
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+  (layer1): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+      (downsample): Sequential(
+        (0): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(256, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(64, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+    )
+  )
+  (layer2): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(256, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+      (downsample): Sequential(
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(512, 128, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(128, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+    )
+  )
+  (layer3): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(512, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+      (downsample): Sequential(
+        (0): Conv2d(512, 1024, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(1024, 256, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(256, 1024, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+    )
+  )
+  (layer4): Sequential(
+    (0): Bottleneck(
+      (conv1): Conv2d(1024, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+      (downsample): Sequential(
+        (0): Conv2d(1024, 2048, kernel_size=(1, 1), stride=(2, 2), bias=False)
+        (1): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      )
+    )
+    (1): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+    )
+    (2): Bottleneck(
+      (conv1): Conv2d(2048, 512, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (conv3): Conv2d(512, 2048, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (bn3): BatchNorm2d(2048, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (relu): ReLU(inplace)
+    )
+  )
+  (avgpool): AvgPool2d(kernel_size=7, stride=1, padding=0)
+  (dropout): Dropout(p=0.5)
+  (fclass): Linear(in_features=2048, out_features=65, bias=True)
+)
+Initializing Datasets and Dataloaders...
+Params to learn:
+	 conv1.weight
+	 bn1.weight
+	 bn1.bias
+	 layer1.0.conv1.weight
+	 layer1.0.bn1.weight
+	 layer1.0.bn1.bias
+	 layer1.0.conv2.weight
+	 layer1.0.bn2.weight
+	 layer1.0.bn2.bias
+	 layer1.0.conv3.weight
+	 layer1.0.bn3.weight
+	 layer1.0.bn3.bias
+	 layer1.0.downsample.0.weight
+	 layer1.0.downsample.1.weight
+	 layer1.0.downsample.1.bias
+	 layer1.1.conv1.weight
+	 layer1.1.bn1.weight
+	 layer1.1.bn1.bias
+	 layer1.1.conv2.weight
+	 layer1.1.bn2.weight
+	 layer1.1.bn2.bias
+	 layer1.1.conv3.weight
+	 layer1.1.bn3.weight
+	 layer1.1.bn3.bias
+	 layer1.2.conv1.weight
+	 layer1.2.bn1.weight
+	 layer1.2.bn1.bias
+	 layer1.2.conv2.weight
+	 layer1.2.bn2.weight
+	 layer1.2.bn2.bias
+	 layer1.2.conv3.weight
+	 layer1.2.bn3.weight
+	 layer1.2.bn3.bias
+	 layer2.0.conv1.weight
+	 layer2.0.bn1.weight
+	 layer2.0.bn1.bias
+	 layer2.0.conv2.weight
+	 layer2.0.bn2.weight
+	 layer2.0.bn2.bias
+	 layer2.0.conv3.weight
+	 layer2.0.bn3.weight
+	 layer2.0.bn3.bias
+	 layer2.0.downsample.0.weight
+	 layer2.0.downsample.1.weight
+	 layer2.0.downsample.1.bias
+	 layer2.1.conv1.weight
+	 layer2.1.bn1.weight
+	 layer2.1.bn1.bias
+	 layer2.1.conv2.weight
+	 layer2.1.bn2.weight
+	 layer2.1.bn2.bias
+	 layer2.1.conv3.weight
+	 layer2.1.bn3.weight
+	 layer2.1.bn3.bias
+	 layer2.2.conv1.weight
+	 layer2.2.bn1.weight
+	 layer2.2.bn1.bias
+	 layer2.2.conv2.weight
+	 layer2.2.bn2.weight
+	 layer2.2.bn2.bias
+	 layer2.2.conv3.weight
+	 layer2.2.bn3.weight
+	 layer2.2.bn3.bias
+	 layer3.0.conv1.weight
+	 layer3.0.bn1.weight
+	 layer3.0.bn1.bias
+	 layer3.0.conv2.weight
+	 layer3.0.bn2.weight
+	 layer3.0.bn2.bias
+	 layer3.0.conv3.weight
+	 layer3.0.bn3.weight
+	 layer3.0.bn3.bias
+	 layer3.0.downsample.0.weight
+	 layer3.0.downsample.1.weight
+	 layer3.0.downsample.1.bias
+	 layer3.1.conv1.weight
+	 layer3.1.bn1.weight
+	 layer3.1.bn1.bias
+	 layer3.1.conv2.weight
+	 layer3.1.bn2.weight
+	 layer3.1.bn2.bias
+	 layer3.1.conv3.weight
+	 layer3.1.bn3.weight
+	 layer3.1.bn3.bias
+	 layer3.2.conv1.weight
+	 layer3.2.bn1.weight
+	 layer3.2.bn1.bias
+	 layer3.2.conv2.weight
+	 layer3.2.bn2.weight
+	 layer3.2.bn2.bias
+	 layer3.2.conv3.weight
+	 layer3.2.bn3.weight
+	 layer3.2.bn3.bias
+	 layer4.0.conv1.weight
+	 layer4.0.bn1.weight
+	 layer4.0.bn1.bias
+	 layer4.0.conv2.weight
+	 layer4.0.bn2.weight
+	 layer4.0.bn2.bias
+	 layer4.0.conv3.weight
+	 layer4.0.bn3.weight
+	 layer4.0.bn3.bias
+	 layer4.0.downsample.0.weight
+	 layer4.0.downsample.1.weight
+	 layer4.0.downsample.1.bias
+	 layer4.1.conv1.weight
+	 layer4.1.bn1.weight
+	 layer4.1.bn1.bias
+	 layer4.1.conv2.weight
+	 layer4.1.bn2.weight
+	 layer4.1.bn2.bias
+	 layer4.1.conv3.weight
+	 layer4.1.bn3.weight
+	 layer4.1.bn3.bias
+	 layer4.2.conv1.weight
+	 layer4.2.bn1.weight
+	 layer4.2.bn1.bias
+	 layer4.2.conv2.weight
+	 layer4.2.bn2.weight
+	 layer4.2.bn2.bias
+	 layer4.2.conv3.weight
+	 layer4.2.bn3.weight
+	 layer4.2.bn3.bias
+	 fclass.weight
+	 fclass.bias
+Epoch 0/179
+----------
+train Loss: 4.8846 Acc: 0.0269
+val Loss: 4.4631 Acc: 0.0228
+
+Epoch 1/179
+----------
+train Loss: 4.5256 Acc: 0.0361
+val Loss: 4.4208 Acc: 0.0411
+
+Epoch 2/179
+----------
+train Loss: 4.2800 Acc: 0.0453
+val Loss: 4.5112 Acc: 0.0594
+
+Epoch 3/179
+----------
+train Loss: 4.1647 Acc: 0.0470
+val Loss: 4.0564 Acc: 0.0502
+
+Epoch 4/179
+----------
+train Loss: 4.0992 Acc: 0.0484
+val Loss: 3.9699 Acc: 0.0731
+
+Epoch 5/179
+----------
+train Loss: 4.0224 Acc: 0.0499
+val Loss: 4.1727 Acc: 0.0685
+
+Epoch 6/179
+----------
+train Loss: 3.9792 Acc: 0.0567
+val Loss: 4.1035 Acc: 0.0890
+
+Epoch 7/179
+----------
+train Loss: 3.9179 Acc: 0.0659
+val Loss: 3.8595 Acc: 0.0845
+
+Epoch 8/179
+----------
+train Loss: 3.9151 Acc: 0.0714
+val Loss: 3.9302 Acc: 0.0776
+
+Epoch 9/179
+----------
+train Loss: 3.8588 Acc: 0.0771
+val Loss: 4.2251 Acc: 0.0685
+
+Epoch 10/179
+----------
+train Loss: 3.8219 Acc: 0.0777
+val Loss: 4.2596 Acc: 0.1027
+
+Epoch 11/179
+----------
+train Loss: 3.7905 Acc: 0.0817
+val Loss: 3.7330 Acc: 0.1164
+
+Epoch 12/179
+----------
+train Loss: 3.7885 Acc: 0.0877
+val Loss: 4.7175 Acc: 0.1005
+
+Epoch 13/179
+----------
+train Loss: 3.7489 Acc: 0.0980
+val Loss: 3.8928 Acc: 0.0868
+
+Epoch 14/179
+----------
+train Loss: 3.7361 Acc: 0.0980
+val Loss: 3.9871 Acc: 0.0890
+
+Epoch 15/179
+----------
+train Loss: 3.6963 Acc: 0.1078
+val Loss: 4.4411 Acc: 0.1027
+
+Epoch 16/179
+----------
+train Loss: 3.7033 Acc: 0.1069
+val Loss: 4.1812 Acc: 0.1324
+
+Epoch 17/179
+----------
+train Loss: 3.6766 Acc: 0.0929
+val Loss: 4.4829 Acc: 0.1050
+
+Epoch 18/179
+----------
+train Loss: 3.6398 Acc: 0.0995
+val Loss: 4.5001 Acc: 0.0959
+
+Epoch 19/179
+----------
+train Loss: 3.6297 Acc: 0.1063
+val Loss: 3.8378 Acc: 0.1096
+
+Epoch 20/179
+----------
+train Loss: 3.5796 Acc: 0.1207
+val Loss: 4.0055 Acc: 0.1324
+
+Epoch 21/179
+----------
+train Loss: 3.5561 Acc: 0.1204
+val Loss: 3.6903 Acc: 0.1324
+
+Epoch 22/179
+----------
+train Loss: 3.5565 Acc: 0.1287
+val Loss: 3.8200 Acc: 0.1142
+
+Epoch 23/179
+----------
+train Loss: 3.5167 Acc: 0.1324
+val Loss: 3.6006 Acc: 0.1484
+
+Epoch 24/179
+----------
+train Loss: 3.5451 Acc: 0.1287
+val Loss: 3.9821 Acc: 0.1324
+
+Epoch 25/179
+----------
+train Loss: 3.5048 Acc: 0.1321
+val Loss: 3.7164 Acc: 0.1324
+
+Epoch 26/179
+----------
+train Loss: 3.4853 Acc: 0.1359
+val Loss: 3.6123 Acc: 0.1393
+
+Epoch 27/179
+----------
+train Loss: 3.4663 Acc: 0.1419
+val Loss: 3.4349 Acc: 0.1438
+
+Epoch 28/179
+----------
+train Loss: 3.4355 Acc: 0.1439
+val Loss: 3.4946 Acc: 0.1575
+
+Epoch 29/179
+----------
+train Loss: 3.3916 Acc: 0.1531
+val Loss: 3.6477 Acc: 0.1598
+
+Epoch 30/179
+----------
+train Loss: 3.3682 Acc: 0.1496
+val Loss: 3.6382 Acc: 0.1667
+
+Epoch 31/179
+----------
+train Loss: 3.3370 Acc: 0.1648
+val Loss: 3.6440 Acc: 0.1507
+
+Epoch 32/179
+----------
+train Loss: 3.3732 Acc: 0.1488
+val Loss: 4.2110 Acc: 0.1689
+
+Epoch 33/179
+----------
+train Loss: 3.2906 Acc: 0.1731
+val Loss: 3.6545 Acc: 0.1712
+
+Epoch 34/179
+----------
+train Loss: 3.2869 Acc: 0.1823
+val Loss: 3.4797 Acc: 0.1712
+
+Epoch 35/179
+----------
+train Loss: 3.2849 Acc: 0.1717
+val Loss: 3.9803 Acc: 0.1507
+
+Epoch 36/179
+----------
+train Loss: 3.2651 Acc: 0.1803
+val Loss: 3.5636 Acc: 0.2009
+
+Epoch 37/179
+----------
+train Loss: 3.2133 Acc: 0.1969
+val Loss: 3.5051 Acc: 0.1689
+
+Epoch 38/179
+----------
+train Loss: 3.1948 Acc: 0.1926
+val Loss: 3.2652 Acc: 0.2123
+
+Epoch 39/179
+----------
+train Loss: 3.2022 Acc: 0.1969
+val Loss: 3.9854 Acc: 0.2123
+
+Epoch 40/179
+----------
+train Loss: 3.2201 Acc: 0.1840
+val Loss: 3.3593 Acc: 0.2352
+
+Epoch 41/179
+----------
+train Loss: 3.1661 Acc: 0.2032
+val Loss: 3.7885 Acc: 0.1872
+
+Epoch 42/179
+----------
+train Loss: 3.1540 Acc: 0.2029
+val Loss: 4.4426 Acc: 0.1804
+
+Epoch 43/179
+----------
+train Loss: 3.1103 Acc: 0.2130
+val Loss: 3.3979 Acc: 0.2100
+
+Epoch 44/179
+----------
+train Loss: 3.1173 Acc: 0.2098
+val Loss: 4.1516 Acc: 0.2100
+
+Epoch 45/179
+----------
+train Loss: 3.0842 Acc: 0.2218
+val Loss: 4.3986 Acc: 0.2009
+
+Epoch 46/179
+----------
+train Loss: 3.0581 Acc: 0.2195
+val Loss: 4.3638 Acc: 0.1804
+
+Epoch 47/179
+----------
+train Loss: 3.0237 Acc: 0.2324
+val Loss: 3.1741 Acc: 0.2397
+
+Epoch 48/179
+----------
+train Loss: 3.0146 Acc: 0.2362
+val Loss: 3.3277 Acc: 0.2511
+
+Epoch 49/179
+----------
+train Loss: 2.9966 Acc: 0.2373
+val Loss: 3.7116 Acc: 0.2100
+
+Epoch 50/179
+----------
+train Loss: 2.9931 Acc: 0.2316
+val Loss: 3.3364 Acc: 0.2443
+
+Epoch 51/179
+----------
+train Loss: 2.9906 Acc: 0.2388
+val Loss: 3.4647 Acc: 0.2671
+
+Epoch 52/179
+----------
+train Loss: 2.9402 Acc: 0.2448
+val Loss: 3.1902 Acc: 0.2352
+
+Epoch 53/179
+----------
+train Loss: 2.9005 Acc: 0.2591
+val Loss: 3.1092 Acc: 0.2922
+
+Epoch 54/179
+----------
+train Loss: 2.8945 Acc: 0.2559
+val Loss: 3.0530 Acc: 0.2854
+
+Epoch 55/179
+----------
+train Loss: 2.8827 Acc: 0.2680
+val Loss: 3.4939 Acc: 0.3151
+
+Epoch 56/179
+----------
+train Loss: 2.8320 Acc: 0.2777
+val Loss: 3.9947 Acc: 0.2397
+
+Epoch 57/179
+----------
+train Loss: 2.8500 Acc: 0.2706
+val Loss: 3.1884 Acc: 0.2580
+
+Epoch 58/179
+----------
+train Loss: 2.8566 Acc: 0.2723
+val Loss: 3.2221 Acc: 0.2922
+
+Epoch 59/179
+----------
+train Loss: 2.7955 Acc: 0.2749
+val Loss: 4.6259 Acc: 0.2306
+
+Epoch 60/179
+----------
+train Loss: 2.8492 Acc: 0.2674
+val Loss: 3.0748 Acc: 0.2877
+
+Epoch 61/179
+----------
+train Loss: 2.7661 Acc: 0.2858
+val Loss: 3.5799 Acc: 0.2877
+
+Epoch 62/179
+----------
+train Loss: 2.7595 Acc: 0.2941
+val Loss: 3.7220 Acc: 0.2968
+
+Epoch 63/179
+----------
+train Loss: 2.7185 Acc: 0.2958
+val Loss: 3.5205 Acc: 0.2808
+
+Epoch 64/179
+----------
+train Loss: 2.7452 Acc: 0.3021
+val Loss: 3.0879 Acc: 0.3356
+
+Epoch 65/179
+----------
+train Loss: 2.7017 Acc: 0.3007
+val Loss: 3.1949 Acc: 0.2945
+
+Epoch 66/179
+----------
+train Loss: 2.6881 Acc: 0.2938
+val Loss: 3.8522 Acc: 0.2511
+
+Epoch 67/179
+----------
+train Loss: 2.6189 Acc: 0.3199
+val Loss: 3.6369 Acc: 0.3082
+
+Epoch 68/179
+----------
+train Loss: 2.6125 Acc: 0.3193
+val Loss: 3.1717 Acc: 0.3356
+
+Epoch 69/179
+----------
+train Loss: 2.6114 Acc: 0.3242
+val Loss: 3.0732 Acc: 0.3288
+
+Epoch 70/179
+----------
+train Loss: 2.5920 Acc: 0.3242
+val Loss: 2.8755 Acc: 0.3676
+
+Epoch 71/179
+----------
+train Loss: 2.5834 Acc: 0.3305
+val Loss: 3.1251 Acc: 0.3219
+
+Epoch 72/179
+----------
+train Loss: 2.5658 Acc: 0.3279
+val Loss: 3.5322 Acc: 0.3539
+
+Epoch 73/179
+----------
+train Loss: 2.4767 Acc: 0.3474
+val Loss: 2.9790 Acc: 0.3037
+
+Epoch 74/179
+----------
+train Loss: 2.5275 Acc: 0.3517
+val Loss: 3.1623 Acc: 0.3676
+
+Epoch 75/179
+----------
+train Loss: 2.4757 Acc: 0.3557
+val Loss: 3.5887 Acc: 0.3630
+
+Epoch 76/179
+----------
+train Loss: 2.5079 Acc: 0.3586
+val Loss: 5.2493 Acc: 0.2420
+
+Epoch 77/179
+----------
+train Loss: 2.4589 Acc: 0.3551
+val Loss: 3.2180 Acc: 0.3653
+
+Epoch 78/179
+----------
+train Loss: 2.4427 Acc: 0.3571
+val Loss: 3.5110 Acc: 0.3516
+
+Epoch 79/179
+----------
+train Loss: 2.4065 Acc: 0.3749
+val Loss: 3.0996 Acc: 0.3721
+
+Epoch 80/179
+----------
+train Loss: 2.3854 Acc: 0.3769
+val Loss: 3.2561 Acc: 0.3196
+
+Epoch 81/179
+----------
+train Loss: 2.4126 Acc: 0.3844
+val Loss: 3.4344 Acc: 0.3425
+
+Epoch 82/179
+----------
+train Loss: 2.3531 Acc: 0.3835
+val Loss: 3.3299 Acc: 0.3699
+
+Epoch 83/179
+----------
+train Loss: 2.3281 Acc: 0.3935
+val Loss: 2.8421 Acc: 0.3767
+
+Epoch 84/179
+----------
+train Loss: 2.3536 Acc: 0.3950
+val Loss: 2.8072 Acc: 0.3904
+
+Epoch 85/179
+----------
+train Loss: 2.3093 Acc: 0.3952
+val Loss: 2.5164 Acc: 0.4224
+
+Epoch 86/179
+----------
+train Loss: 2.2933 Acc: 0.4101
+val Loss: 2.7964 Acc: 0.3904
+
+Epoch 87/179
+----------
+train Loss: 2.2745 Acc: 0.4067
+val Loss: 4.4565 Acc: 0.2534
+
+Epoch 88/179
+----------
+train Loss: 2.2869 Acc: 0.4004
+val Loss: 3.7574 Acc: 0.2854
+
+Epoch 89/179
+----------
+train Loss: 2.2351 Acc: 0.4187
+val Loss: 3.3061 Acc: 0.3265
+
+Epoch 90/179
+----------
+train Loss: 2.2765 Acc: 0.4024
+val Loss: 2.8616 Acc: 0.3699
+
+Epoch 91/179
+----------
+train Loss: 2.1518 Acc: 0.4190
+val Loss: 3.0916 Acc: 0.3767
+
+Epoch 92/179
+----------
+train Loss: 2.1977 Acc: 0.4107
+val Loss: 3.5244 Acc: 0.3813
+
+Epoch 93/179
+----------
+train Loss: 2.1898 Acc: 0.4245
+val Loss: 2.6588 Acc: 0.3927
+
+Epoch 94/179
+----------
+train Loss: 2.1386 Acc: 0.4336
+val Loss: 2.8494 Acc: 0.3973
+
+Epoch 95/179
+----------
+train Loss: 2.1365 Acc: 0.4374
+val Loss: 3.0896 Acc: 0.3425
+
+Epoch 96/179
+----------
+train Loss: 2.1101 Acc: 0.4405
+val Loss: 2.7668 Acc: 0.4018
+
+Epoch 97/179
+----------
+train Loss: 2.1110 Acc: 0.4402
+val Loss: 3.1642 Acc: 0.3836
+
+Epoch 98/179
+----------
+train Loss: 2.1283 Acc: 0.4463
+val Loss: 2.8314 Acc: 0.3927
+
+Epoch 99/179
+----------
+train Loss: 2.0762 Acc: 0.4543
+val Loss: 2.8522 Acc: 0.4315
+
+Epoch 100/179
+----------
+train Loss: 2.0874 Acc: 0.4431
+val Loss: 2.8370 Acc: 0.4064
+
+Epoch 101/179
+----------
+train Loss: 2.0476 Acc: 0.4600
+val Loss: 3.0902 Acc: 0.4178
+
+Epoch 102/179
+----------
+train Loss: 2.0478 Acc: 0.4471
+val Loss: 3.0528 Acc: 0.3699
+
+Epoch 103/179
+----------
+train Loss: 2.0323 Acc: 0.4600
+val Loss: 2.9114 Acc: 0.4110
+
+Epoch 104/179
+----------
+train Loss: 1.9802 Acc: 0.4789
+val Loss: 2.7040 Acc: 0.4247
+
+Epoch 105/179
+----------
+train Loss: 1.9661 Acc: 0.4812
+val Loss: 2.7473 Acc: 0.4406
+
+Epoch 106/179
+----------
+train Loss: 1.9746 Acc: 0.4700
+val Loss: 2.8359 Acc: 0.3858
+
+Epoch 107/179
+----------
+train Loss: 2.0055 Acc: 0.4620
+val Loss: 3.0240 Acc: 0.3881
+
+Epoch 108/179
+----------
+train Loss: 1.9740 Acc: 0.4764
+val Loss: 2.5108 Acc: 0.4543
+
+Epoch 109/179
+----------
+train Loss: 1.9030 Acc: 0.4881
+val Loss: 3.1462 Acc: 0.4201
+
+Epoch 110/179
+----------
+train Loss: 1.9073 Acc: 0.4953
+val Loss: 2.7564 Acc: 0.4543
+
+Epoch 111/179
+----------
+train Loss: 1.8785 Acc: 0.5042
+val Loss: 4.3775 Acc: 0.3790
+
+Epoch 112/179
+----------
+train Loss: 1.8798 Acc: 0.4921
+val Loss: 3.5672 Acc: 0.3584
+
+Epoch 113/179
+----------
+train Loss: 1.8515 Acc: 0.5030
+val Loss: 3.0436 Acc: 0.3881
+
+Epoch 114/179
+----------
+train Loss: 1.8070 Acc: 0.5050
+val Loss: 2.4533 Acc: 0.4909
+
+Epoch 115/179
+----------
+train Loss: 1.8262 Acc: 0.5176
+val Loss: 2.6922 Acc: 0.4566
+
+Epoch 116/179
+----------
+train Loss: 1.8312 Acc: 0.5027
+val Loss: 3.0744 Acc: 0.4589
+
+Epoch 117/179
+----------
+train Loss: 1.8258 Acc: 0.5021
+val Loss: 2.9514 Acc: 0.4384
+
+Epoch 118/179
+----------
+train Loss: 1.7999 Acc: 0.5191
+val Loss: 2.7807 Acc: 0.4498
+
+Epoch 119/179
+----------
+train Loss: 1.7739 Acc: 0.5188
+val Loss: 3.5526 Acc: 0.4521
+
+Epoch 120/179
+----------
+train Loss: 1.7833 Acc: 0.5282
+val Loss: 3.8005 Acc: 0.3425
+
+Epoch 121/179
+----------
+train Loss: 1.7130 Acc: 0.5457
+val Loss: 2.5324 Acc: 0.4977
+
+Epoch 122/179
+----------
+train Loss: 1.7557 Acc: 0.5291
+val Loss: 3.4107 Acc: 0.4201
+
+Epoch 123/179
+----------
+train Loss: 1.7099 Acc: 0.5371
+val Loss: 3.3096 Acc: 0.4635
+
+Epoch 124/179
+----------
+train Loss: 1.7253 Acc: 0.5400
+val Loss: 3.0108 Acc: 0.4612
+
+Epoch 125/179
+----------
+train Loss: 1.6629 Acc: 0.5494
+val Loss: 2.6063 Acc: 0.4817
+
+Epoch 126/179
+----------
+train Loss: 1.6933 Acc: 0.5417
+val Loss: 2.8396 Acc: 0.4566
+
+Epoch 127/179
+----------
+train Loss: 1.7029 Acc: 0.5469
+val Loss: 2.9837 Acc: 0.4041
+
+Epoch 128/179
+----------
+train Loss: 1.6800 Acc: 0.5500
+val Loss: 3.2194 Acc: 0.4680
+
+Epoch 129/179
+----------
+train Loss: 1.7763 Acc: 0.5274
+val Loss: 2.6771 Acc: 0.4680
+
+Epoch 130/179
+----------
+train Loss: 1.6045 Acc: 0.5629
+val Loss: 2.8639 Acc: 0.4726
+
+Epoch 131/179
+----------
+train Loss: 1.5968 Acc: 0.5635
+val Loss: 2.7354 Acc: 0.4863
+
+Epoch 132/179
+----------
+train Loss: 1.6002 Acc: 0.5761
+val Loss: 3.6755 Acc: 0.4589
+
+Epoch 133/179
+----------
+train Loss: 1.6137 Acc: 0.5623
+val Loss: 3.4774 Acc: 0.4703
+
+Epoch 134/179
+----------
+train Loss: 1.6307 Acc: 0.5641
+val Loss: 3.2055 Acc: 0.4817
+
+Epoch 135/179
+----------
+train Loss: 1.5723 Acc: 0.5727
+val Loss: 4.3772 Acc: 0.3470
+
+Epoch 136/179
+----------
+train Loss: 1.6007 Acc: 0.5689
+val Loss: 2.9694 Acc: 0.4817
+
+Epoch 137/179
+----------
+train Loss: 1.5906 Acc: 0.5655
+val Loss: 3.3728 Acc: 0.4132
+
+Epoch 138/179
+----------
+train Loss: 1.4756 Acc: 0.5964
+val Loss: 3.5046 Acc: 0.4521
+
+Epoch 139/179
+----------
+train Loss: 1.5352 Acc: 0.5919
+val Loss: 2.7881 Acc: 0.5000
+
+Epoch 140/179
+----------
+train Loss: 1.5260 Acc: 0.5884
+val Loss: 3.0324 Acc: 0.4795
+
+Epoch 141/179
+----------
+train Loss: 1.4361 Acc: 0.6142
+val Loss: 3.3095 Acc: 0.4224
+
+Epoch 142/179
+----------
+train Loss: 1.4858 Acc: 0.5921
+val Loss: 2.7211 Acc: 0.4817
+
+Epoch 143/179
+----------
+train Loss: 1.4462 Acc: 0.6111
+val Loss: 2.8010 Acc: 0.4749
+
+Epoch 144/179
+----------
+train Loss: 1.5148 Acc: 0.5979
+val Loss: 2.9825 Acc: 0.4749
+
+Epoch 145/179
+----------
+train Loss: 1.4796 Acc: 0.6085
+val Loss: 2.5458 Acc: 0.5274
+
+Epoch 146/179
+----------
+train Loss: 1.4248 Acc: 0.6108
+val Loss: 2.6883 Acc: 0.5251
+
+Epoch 147/179
+----------
+train Loss: 1.3957 Acc: 0.6185
+val Loss: 3.5068 Acc: 0.4977
+
+Epoch 148/179
+----------
+train Loss: 1.4382 Acc: 0.6119
+val Loss: 2.4648 Acc: 0.5434
+
+Epoch 149/179
+----------
+train Loss: 1.3885 Acc: 0.6271
+val Loss: 2.6746 Acc: 0.5183
+
+Epoch 150/179
+----------
+train Loss: 1.3799 Acc: 0.6205
+val Loss: 3.2310 Acc: 0.4932
+
+Epoch 151/179
+----------
+train Loss: 1.4092 Acc: 0.6185
+val Loss: 2.7148 Acc: 0.5091
+
+Epoch 152/179
+----------
+train Loss: 1.3251 Acc: 0.6331
+val Loss: 2.6298 Acc: 0.5160
+
+Epoch 153/179
+----------
+train Loss: 1.3674 Acc: 0.6228
+val Loss: 3.5307 Acc: 0.4475
+
+Epoch 154/179
+----------
+train Loss: 1.2929 Acc: 0.6500
+val Loss: 2.7678 Acc: 0.4886
+
+Epoch 155/179
+----------
+train Loss: 1.3354 Acc: 0.6311
+val Loss: 3.1593 Acc: 0.4817
+
+Epoch 156/179
+----------
+train Loss: 1.3160 Acc: 0.6357
+val Loss: 3.2618 Acc: 0.5137
+
+Epoch 157/179
+----------
+train Loss: 1.2738 Acc: 0.6483
+val Loss: 4.0282 Acc: 0.4749
+
+Epoch 158/179
+----------
+train Loss: 1.3523 Acc: 0.6280
+val Loss: 3.4053 Acc: 0.4954
+
+Epoch 159/179
+----------
+train Loss: 1.3305 Acc: 0.6420
+val Loss: 2.9153 Acc: 0.5000
+
+Epoch 160/179
+----------
+train Loss: 1.3234 Acc: 0.6389
+val Loss: 2.7214 Acc: 0.5137
+
+Epoch 161/179
+----------
+train Loss: 1.2395 Acc: 0.6664
+val Loss: 2.8035 Acc: 0.5320
+
+Epoch 162/179
+----------
+train Loss: 1.2666 Acc: 0.6472
+val Loss: 2.5919 Acc: 0.5251
+
+Epoch 163/179
+----------
+train Loss: 1.2879 Acc: 0.6541
+val Loss: 4.7314 Acc: 0.3562
+
+Epoch 164/179
+----------
+train Loss: 1.2578 Acc: 0.6561
+val Loss: 2.5317 Acc: 0.5251
+
+Epoch 165/179
+----------
+train Loss: 1.2729 Acc: 0.6515
+val Loss: 3.1208 Acc: 0.4726
+
+Epoch 166/179
+----------
+train Loss: 1.2642 Acc: 0.6543
+val Loss: 3.5864 Acc: 0.4703
+
+Epoch 167/179
+----------
+train Loss: 1.2665 Acc: 0.6584
+val Loss: 3.4128 Acc: 0.4932
+
+Epoch 168/179
+----------
+train Loss: 1.2212 Acc: 0.6724
+val Loss: 3.0371 Acc: 0.5365
+
+Epoch 169/179
+----------
+train Loss: 1.2405 Acc: 0.6627
+val Loss: 2.8459 Acc: 0.5320
+
+Epoch 170/179
+----------
+train Loss: 1.2891 Acc: 0.6432
+val Loss: 2.3168 Acc: 0.5776
+
+Epoch 171/179
+----------
+train Loss: 1.1937 Acc: 0.6661
+val Loss: 3.5494 Acc: 0.4977
+
+Epoch 172/179
+----------
+train Loss: 1.1773 Acc: 0.6801
+val Loss: 3.3141 Acc: 0.5137
+
+Epoch 173/179
+----------
+train Loss: 1.1982 Acc: 0.6801
+val Loss: 2.9704 Acc: 0.5297
+
+Epoch 174/179
+----------
+train Loss: 1.1487 Acc: 0.6876
+val Loss: 3.2200 Acc: 0.5046
+
+Epoch 175/179
+----------
+train Loss: 1.1280 Acc: 0.6913
+val Loss: 2.8977 Acc: 0.5274
+
+Epoch 176/179
+----------
+train Loss: 1.1752 Acc: 0.6695
+val Loss: 2.4545 Acc: 0.5685
+
+Epoch 177/179
+----------
+train Loss: 1.1292 Acc: 0.6856
+val Loss: 3.0288 Acc: 0.5137
+
+Epoch 178/179
+----------
+train Loss: 1.1602 Acc: 0.6896
+val Loss: 2.7998 Acc: 0.5616
+
+Epoch 179/179
+----------
+train Loss: 1.1503 Acc: 0.6899
+val Loss: 2.6975 Acc: 0.4954
+
+Training complete in 111m 42s
+Best val Acc: 0.577626
+creating directory:  /workspace/ruilei/hw/result/taskC_dropout_2019-04-15-16_13
