@@ -4,7 +4,7 @@ import torch
 import numpy as np
 
 # helper function
-def train_model(device, model, dataloaders, criterion, optimizer, num_epochs=25, is_inception=False):
+def train_model(annotation, device, model, dataloaders, criterion, optimizer, num_epochs=25, is_inception=False):
   # Send the model to GPU
   model= model.to(device)
 
@@ -92,7 +92,7 @@ def train_model(device, model, dataloaders, criterion, optimizer, num_epochs=25,
           best_acc = epoch_acc
           best_model_wts = copy.deepcopy(model.state_dict())
           best_cfm = copy.deepcopy(cfm)
-          torch.save(model.state_dict(), 'epoch_backup_model.pkl')
+          torch.save(model.state_dict(), annotation+'_epoch_backup_model.pkl')
 
     print() # Each epoch has a training and validation phase
 

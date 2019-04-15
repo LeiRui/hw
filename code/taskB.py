@@ -29,13 +29,13 @@ num_classes = 65
 batch_size = 8
 
 # Number of epochs to train for
-num_epochs = 1
+num_epochs = 300
 
 # Flag for feature extracting. When False, we finetune the whole model, when True we only update the reshaped layer params
 feature_extract = False
 
 # Initialize the model for this run
-model_ft, input_size = initialize_model(model_name, num_classes, feature_extract, use_pretrained=True)
+model_ft, input_size = initialize_model(model_name, num_classes, feature_extract, use_pretrained=False)
 # Print the model we just instantiated
 print(model_ft)
 
@@ -53,7 +53,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 # Train and evaluate
 model_ft, train_loss_history, train_acc_history, val_loss_history, \
 val_acc_history, best_cfm \
-  = train_model(device, model_ft, dataloaders_dict, criterion, optimizer_ft,
+  = train_model("taskB", device, model_ft, dataloaders_dict, criterion, optimizer_ft,
                 num_epochs=num_epochs, is_inception=(model_name=="inception"))
 
 import time

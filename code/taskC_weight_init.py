@@ -12,15 +12,13 @@ from buildModel import *
 from loadData import *
 from createOptimizer import *
 from trainModel import *
+from cNet_weight_init import *
 
 print("PyTorch Version: ",torch.__version__)
 print("Torchvision Version: ",torchvision.__version__)
 
 # Top level data directory. Here we assume the format of the directory conforms to the ImageFolder structure
 data_dir = "/workspace/ruilei/hw/data"
-
-# Models to choose from [resnet, alexnet, vgg, squeezenet, densenet, inception]
-model_name = "resnet"
 
 # Number of classes in the dataset
 num_classes = 65
@@ -29,37 +27,33 @@ num_classes = 65
 batch_size = 8
 
 # Number of epochs to train for
-num_epochs = 60
-
-# Flag for feature extracting. When False, we finetune the whole model, when True we only update the reshaped layer params
-feature_extract = False
+num_epochs = 180
 
 # Initialize the model for this run
-model_ft, input_size = initialize_model(model_name, num_classes, feature_extract, use_pretrained=True)
+model_ft = Net()
 # Print the model we just instantiated
 print(model_ft)
 
 # load data
-dataloaders_dict = getDataLoader(data_dir, input_size, batch_size)
+dataloaders_dict = getDataLoader(data_dir, 224, batch_size)
 
 # Setup the loss fxn
 criterion = nn.CrossEntropyLoss()
 
 # create optimizer
-optimizer_ft = createOptimizer(model_ft, feature_extract)
+optimizer_ft = createOptimizer(model_ft, feature_extract=False)
 
 # Detect if we have a GPU available
-device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+device = torch.device("cuda:1" if torch.cuda.is_available() else "cpu")
 # Train and evaluate
 model_ft, train_loss_history, train_acc_history, val_loss_history, \
 val_acc_history, best_cfm \
-  = train_model("taskA", device, model_ft, dataloaders_dict, criterion, optimizer_ft,
-                num_epochs=num_epochs, is_inception=(model_name=="inception"))
+  = train_model("taskC_weight_init", device, model_ft, dataloaders_dict, criterion, optimizer_ft, num_epochs=num_epochs, is_inception=False)
 
 import time
 import os
 now = time.strftime("%Y-%m-%d-%H_%M",time.localtime(time.time()))
-dir = "/workspace/ruilei/hw/result/taskA_"+now
+dir = "/workspace/ruilei/hw/result/taskC_weight_init_"+now
 if not os.path.exists(dir):
   print("creating directory: ", dir)
   os.makedirs(dir)
@@ -73,7 +67,7 @@ history.to_csv(os.path.join(dir,"history.csv"),index_label="epoch")
 
 #lidation Accuracy vs. Number of Training Epochs")
 plt.figure()
-plt.title("Task A: Accuracy vs. Number of Training Epochs")
+plt.title("Task C: Accuracy vs. Number of Training Epochs")
 plt.xlabel("Training Epochs")
 plt.ylabel("Accuracy")
 plt.plot(range(1,num_epochs+1),train_acc_history,label="train")
@@ -85,7 +79,7 @@ plt.savefig(os.path.join(dir,"acc.png"),transparent=False,bbox_inches='tight',dp
 
 
 plt.figure()
-plt.title("Task A: Loss vs. Number of Training Epochs")
+plt.title("Task C: Loss vs. Number of Training Epochs")
 plt.xlabel("Training Epochs")
 plt.ylabel("Loss")
 plt.plot(range(1,num_epochs+1),train_loss_history,label="train")

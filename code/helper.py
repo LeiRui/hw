@@ -17,7 +17,7 @@ val_loss_history=his['val_loss_history']
 
 num_epochs = 60
 plt.figure()
-plt.title("Task A: Accuracy vs. Number of Training Epochs")
+plt.title("Task B: Accuracy vs. Number of Training Epochs")
 plt.xlabel("Training Epochs")
 plt.ylabel("Accuracy")
 plt.plot(range(1,num_epochs+1),train_acc_history,label="train")
@@ -28,7 +28,7 @@ plt.legend()
 plt.savefig(os.path.join(dir,"acc.png"),transparent=False,bbox_inches='tight',dpi=500)
 
 plt.figure()
-plt.title("Task A: Loss vs. Number of Training Epochs")
+plt.title("Task B: Loss vs. Number of Training Epochs")
 plt.xlabel("Training Epochs")
 plt.ylabel("Loss")
 plt.plot(range(1,num_epochs+1),train_loss_history,label="train")
