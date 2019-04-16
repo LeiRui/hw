@@ -8,8 +8,8 @@ import numpy as np
 import pandas as pd
 
 #model_dir = "/workspace/ruilei/hw/result/taskA/model.pkl"
-#model_dir="/workspace/ruilei/hw/result/taskB/model.pkl"
-model_dir="model.pkl"
+model_dir="/workspace/ruilei/hw/result/taskB/model.pkl"
+#model_dir="model.pkl"
 data_dir = "/workspace/ruilei/hw/data/train/2"
 
 class TestDataset(Dataset):
