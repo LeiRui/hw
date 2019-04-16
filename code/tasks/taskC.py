@@ -31,7 +31,7 @@ num_classes = 65
 batch_size = 8
 
 # Number of epochs to train for
-num_epochs = 1
+num_epochs = 180
 
 # Initialize the model for this run
 model_ft = Net()

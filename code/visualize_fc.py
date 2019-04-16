@@ -51,10 +51,10 @@ class CNNShow():
 		return x
 
 
-#model_dir = "/workspace/ruilei/hw/result/taskA/model.pkl"
-model_dir="/workspace/ruilei/hw/result/taskA/model.pkl"
-#model_dir="model.pkl"
-data_dir = "/workspace/ruilei/hw/data/train/[0-9]" #10 class
+
+model_dir="../result/taskC/model.pkl"
+
+data_dir = "../data/train/[0-9]" #10 class
 
 model = torch.load(model_dir)
 model.eval()
@@ -104,10 +104,6 @@ res_embedded = TSNE(n_components=2).fit_transform(res)
 print(res_embedded.shape)
 
 
-dir = "../result/visual_res"
-if not os.path.exists(dir):
-        os.makedirs(dir)
-
 # separate
 res_dict = {}
 for i in range(classes.shape[0]):
@@ -128,8 +124,8 @@ colors = cm.rainbow(np.linspace(0, 1, 10))
 cs=[]
 for i in range(10):
 	cs.append(axes.scatter(np.array(res_dict[i])[:,0],np.array(res_dict[i])[:,1], c=colors[i]))
+axes.set_title("model C")
 axes.legend(iter(cs),res_dict.keys(),loc='best')
-
 
 #plt.figure()
 #for x,c in zip(res_embedded, classes):
@@ -137,5 +133,5 @@ axes.legend(iter(cs),res_dict.keys(),loc='best')
 #	plt.scatter(x[0],x[1],c=colors[int(c)])
 #	print(colors[int(c)])
 
-plt.savefig(os.path.join(dir,"visual_fc.png"))
+plt.savefig(os.path.join(dir,"visual_fc_modelC.png"))
 

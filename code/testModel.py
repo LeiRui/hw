@@ -6,11 +6,13 @@ import os
 from PIL import Image
 import numpy as np
 import pandas as pd
+import sys
+sys.path.append("cNets")
+from cNet import *
 
-#model_dir = "/workspace/ruilei/hw/result/taskA/model.pkl"
-model_dir="/workspace/ruilei/hw/result/taskC/model.pkl"
-#model_dir="model.pkl"
-data_dir = "/workspace/ruilei/hw/data/train/2"
+model_dir="../result/taskC/model.pkl"
+
+data_dir = "../data/test"
 
 class TestDataset(Dataset):
   def __init__(self, path, transform=None):
@@ -69,7 +71,8 @@ res_class = np.array(res_class)
 
 import pandas as pd
 # x = pd.DataFrame(columns=['id','pred_idx','pred_class'], data=np.column_stack((names,res,res_class)))
-x = pd.DataFrame(columns=['id','pred_class'], data=np.column_stack((names,res_class)))
+x = pd.DataFrame(columns=['id','label'], data=np.column_stack((names,res_class)))
+x=x.sort_values(by=['id'])
 x.to_csv("test_result.csv",index=False)
 print(names)
 print(res_class)
