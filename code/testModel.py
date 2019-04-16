@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 #model_dir = "/workspace/ruilei/hw/result/taskA/model.pkl"
-model_dir="/workspace/ruilei/hw/result/taskB/model.pkl"
+model_dir="/workspace/ruilei/hw/result/taskC/model.pkl"
 #model_dir="model.pkl"
 data_dir = "/workspace/ruilei/hw/data/train/2"
 
@@ -72,4 +72,4 @@ import pandas as pd
 x = pd.DataFrame(columns=['id','pred_class'], data=np.column_stack((names,res_class)))
 x.to_csv("test_result.csv",index=False)
 print(names)
-print(res)
+print(res_class)
