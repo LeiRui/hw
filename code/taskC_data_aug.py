@@ -53,7 +53,7 @@ val_acc_history, best_cfm \
 import time
 import os
 now = time.strftime("%Y-%m-%d-%H_%M",time.localtime(time.time()))
-dir = "/workspace/ruilei/hw/result/taskC_data_aug_"+now
+dir = "../result/taskC_data_aug_"+now
 if not os.path.exists(dir):
   print("creating directory: ", dir)
   os.makedirs(dir)
